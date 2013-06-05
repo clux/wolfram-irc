@@ -1,0 +1,9 @@
+{
+  "name": "wolfBot123",
+  "server": "irc.quakenet.org",
+  "chan": "#wolfram",
+  "apiKey": "XXXXXX-XXXXXXXXXX",
+  "whitelist": [
+    "clux"
+  ]
+}

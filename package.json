@@ -1,0 +1,20 @@
+{
+  "author": "Eirik Albrigtsen <analsandblaster@gmail.com>",
+  "name": "wolfram-irc",
+  "description": "IRC bot that defers to Wolfram Alpha",
+  "version": "0.0.0",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/clux/wolfram-irc.git"
+  },
+  "bin": {
+    "wlfbot": "wlf.js"
+  },
+  "dependencies": {
+    "dye": "~0.2.0",
+    "irc": "~0.3.6",
+    "confortable": "~0.2.1",
+    "wolfram": "~0.2.6"
+  },
+  "license": "MIT"
+}
