@@ -63,7 +63,7 @@ The first 3 options are used directly to connect to IRC. Nickname, server, and c
 <tjw> wolfram: red or blue?
 <clvr> tjw: Blue.
 <wolfram> tjw: results for red  (color)  |  blue  (color):
-<wolfram> http://www4a.wolframalpha.com/Calculate/MSP/MSP7471id63d5heg7e8f2900001icc2575i2cgfg80?MSPStoreType=image/gif&s=60
+<wolfram> --link to image containing only the colors of blue and red next to their names--
 * clux doesn't know what he expected
 ```
 

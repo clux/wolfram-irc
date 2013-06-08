@@ -14,7 +14,7 @@
     "dye": "~0.2.0",
     "irc": "~0.3.6",
     "confortable": "~0.2.1",
-    "wolfram": "~0.2.6"
+    "wolfram-alpha": "~0.1.0"
   },
   "license": "MIT"
 }
