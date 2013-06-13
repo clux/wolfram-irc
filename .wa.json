@@ -3,6 +3,7 @@
   "server": "irc.quakenet.org",
   "chan": "#wolfram",
   "apiKey": "XXXXXX-XXXXXXXXXX",
+  "apiOpts": {},
   "whitelist": [
     "clux"
   ]

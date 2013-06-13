@@ -15,7 +15,7 @@ var bot = new irc.Client(cfg.server, cfg.name, {
   channels: [cfg.chan],
 });
 
-var wolfram = Wolf.createClient(cfg.apiKey);
+var wolfram = Wolf.createClient(cfg.apiKey, cfg.apiOpts || {});
 var chanReg = new RegExp('^' + cfg.name + '[\\s,\\:](.*)');
 
 bot.addListener('message' + cfg.chan, function (from, msg) {
@@ -34,7 +34,7 @@ bot.addListener('message' + cfg.chan, function (from, msg) {
         return console.error(err);
       }
       console.log(dye.yellow("Result: %j"), results);
-      if (!results.length) {
+      if (results.length <= 1) {
         bot.say(cfg.chan, from + ': Dunno. Try clvr.');
         return;
       }

@@ -19,6 +19,9 @@ The first 3 options are used directly to connect to IRC. Nickname, server, and c
 
 `whitelist` a list of usernames that you will allow to use the bot. Given that there are usage limits/potential costs, you may not want people you don't know spamming it with a script.
 
+`apiOpts` is a dictionary that will be merged into the query parameters. You can for example override your locatation and default unit selection with 
+`{"location": "London, UK", "units": "nonmetric"}`.
+
 ## Highlights
 
 ```
