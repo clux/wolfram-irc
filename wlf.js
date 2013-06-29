@@ -34,7 +34,14 @@ bot.addListener('message' + cfg.chan, function (from, msg) {
         return console.error(err);
       }
       console.log(dye.yellow("Result: %j"), results);
-      if (results.length <= 1) {
+
+      if (results !== null && results.length === 1 && results[0].primary && results[0].subpods[0].image) {
+        // exact maths questions just give an image result without interpretation
+        bot.say(cfg.chan, from + ': ' + results[0].subpods[0].image);
+        return;
+      }
+
+      if (results === null || results.length <= 1) {
         bot.say(cfg.chan, from + ': Dunno. Try clvr.');
         return;
       }
