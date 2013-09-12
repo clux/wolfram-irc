@@ -7,12 +7,15 @@
     "type": "git",
     "url": "git://github.com/clux/wolfram-irc.git"
   },
+  "scripts": {
+    "start": "node irc.js"
+  },
   "bin": {
-    "wlfbot": "wlf.js"
+    "wlfbot": "irc.js"
   },
   "dependencies": {
     "dye": "~0.2.0",
-    "irc": "~0.3.6",
+    "gu": "~0.0.1",
     "confortable": "~0.2.1",
     "wolfram-alpha": "~0.1.0"
   },

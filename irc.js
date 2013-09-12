@@ -9,4 +9,4 @@ var bot = require('gu')(cfg.server, cfg.name, {
   realName: 'wolfram',
   debug: false,
   channels: [cfg.chan],
-}, , require('path').join(__dirname, 'bot'), ['wlf.js']);
+}, require('path').join(__dirname, 'bot'), ['wlf.js']);
