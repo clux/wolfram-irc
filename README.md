@@ -2,14 +2,31 @@
 A simple IRC bot that connects to a server/channel of choice and will relay any messages addressed to it in the channel to [Wolfram Alpha](http://http://www.wolframalpha.com/) for quick answers to your precise questions.
 
 ## Usage/Installation
+First install the libxmljs dependency in the parser:
+
 Install and modify the default config file to suit your needs:
 
 ```bash
 sudo apt-get install libxml2-dev # for libxmljs
+```
+
+Then either globally install the bot:
+
+```bash
 npm install -g wolfram-irc
 curl https://raw.github.com/clux/wolfram-irc/master/.wa.json > .wa.json
 gedit .wa.json # you must change the first 4 params in config
 wlfbot
+```
+
+Or, if you want to fork and work directly:
+
+```bash
+git clone https://github.com/clux/wolfram-irc.git
+cd wolfram-irc
+npm install
+gedit .wa.json
+npm start
 ```
 
 ## Config options
@@ -19,7 +36,7 @@ The first 3 options are used directly to connect to IRC. Nickname, server, and c
 
 `whitelist` a list of usernames that you will allow to use the bot. Given that there are usage limits/potential costs, you may not want people you don't know spamming it with a script.
 
-`apiOpts` is a dictionary that will be merged into the query parameters. You can for example override your locatation and default unit selection with 
+`apiOpts` is a dictionary that will be merged into the query parameters. You can for example override your locatation and default unit selection with
 `{"location": "London, UK", "units": "nonmetric"}`.
 
 ## Highlights
