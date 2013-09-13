@@ -4,8 +4,6 @@ A simple IRC bot that connects to a server/channel of choice and will relay any 
 ## Usage/Installation
 First install the libxmljs dependency in the parser:
 
-Install and modify the default config file to suit your needs:
-
 ```bash
 sudo apt-get install libxml2-dev # for libxmljs
 ```
