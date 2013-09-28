@@ -6,7 +6,7 @@ var wolfram = Wolf.createClient(cfg.apiKey, cfg.apiOpts || {});
 
 module.exports = function (gu) {
 
-  gu.handle(/(.*)/, function (content, say, user) {
+  gu.handle(/(.*)/, function (say, content, user) {
     if (cfg.whitelist.indexOf(user) < 0) {
       return; // non-whitelisted person
     }

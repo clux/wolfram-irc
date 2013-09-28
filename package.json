@@ -14,8 +14,8 @@
     "wlfbot": "irc.js"
   },
   "dependencies": {
-    "gu": "~0.1.0",
-    "irc-stream": "~0.0.1",
+    "gu": "~0.2.0",
+    "irc-stream": "~0.0.4",
     "confortable": "~0.2.1",
     "wolfram-alpha": "~0.1.0"
   },
