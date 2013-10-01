@@ -5,7 +5,7 @@
   "version": "0.3.0",
   "repository": {
     "type": "git",
-    "url": "git://github.com/clux/wolfram-irc.git"
+    "url": "clux/wolfram-irc"
   },
   "scripts": {
     "start": "node irc.js"
@@ -14,8 +14,8 @@
     "wlfbot": "irc.js"
   },
   "dependencies": {
-    "gu": "~0.2.0",
-    "irc-stream": "~0.0.4",
+    "gu": "~0.2.2",
+    "irc-stream": "~0.0.5",
     "confortable": "~0.2.1",
     "wolfram-alpha": "~0.1.0"
   },
