@@ -1,4 +1,6 @@
 # wolfram-irc
+[![Dependency Status](https://david-dm.org/clux/wolfram-irc.png)](https://david-dm.org/clux/wolfram-irc)
+[![unstable](http://hughsk.github.io/stability-badges/dist/unstable.svg)](http://nodejs.org/api/documentation.html#documentation_stability_index)
 A simple IRC bot that connects to a server/channel of choice and will relay any messages addressed to it in the channel to [Wolfram Alpha](http://http://www.wolframalpha.com/) for quick answers to your precise questions.
 
 ## Usage/Installation
