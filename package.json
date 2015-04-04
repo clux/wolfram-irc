@@ -23,7 +23,7 @@
     "gu": "^0.4.0",
     "irc-stream": "^0.2.0",
     "sulfur": "^1.0.0",
-    "wolfram-alpha": "^0.1.1"
+    "wolfram-alpha": "^0.2.0"
   },
   "devDependencies": {
     "jscoverage": "^0.5.9",
