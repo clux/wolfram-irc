@@ -7,17 +7,28 @@
     "type": "git",
     "url": "clux/wolfram-irc"
   },
-  "scripts": {
-    "start": "node irc.js"
-  },
+  "main": "wlf-gu.js",
   "bin": {
     "wlfbot": "irc.js"
   },
+  "scripts": {
+    "start": "node irc.js",
+    "test": "nodeunit --reporter=verbose test/*.test.js",
+    "precoverage": "jscoverage bot",
+    "coverage": "WOLFBOT_COV=1 nodeunit --reporter=lcov test/*.test.js",
+    "coveralls": "npm run coverage | coveralls"
+  },
   "dependencies": {
-    "gu": "~0.2.2",
-    "irc-stream": "~0.0.5",
-    "confortable": "~0.2.1",
-    "wolfram-alpha": "~0.1.0"
+    "confortable": "^0.2.2",
+    "gu": "^0.4.0",
+    "irc-stream": "^0.2.0",
+    "sulfur": "^1.0.0",
+    "wolfram-alpha": "^0.1.1"
+  },
+  "devDependencies": {
+    "jscoverage": "^0.5.9",
+    "nodeunit": "^0.9.1",
+    "coveralls": "^2.11.2"
   },
   "license": "MIT"
 }

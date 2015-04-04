@@ -1,6 +1,9 @@
 # wolfram-irc
-[![Dependency Status](https://david-dm.org/clux/wolfram-irc.png)](https://david-dm.org/clux/wolfram-irc)
-[![unstable](http://hughsk.github.io/stability-badges/dist/unstable.svg)](http://nodejs.org/api/documentation.html#documentation_stability_index)
+[![npm status](http://img.shields.io/npm/v/wolfram-irc.svg)](https://www.npmjs.org/package/wolfram-irc)
+[![build status](https://secure.travis-ci.org/clux/wolfram-irc.svg)](http://travis-ci.org/clux/wolfram-irc)
+[![dependency status](https://david-dm.org/clux/wolfram-irc.svg)](https://david-dm.org/clux/wolfram-irc)
+[![coverage status](http://img.shields.io/coveralls/clux/wolfram-irc.svg)](https://coveralls.io/r/clux/wolfram-irc)
+
 A simple IRC bot that connects to a server/channel of choice and will relay any messages addressed to it in the channel to [Wolfram Alpha](http://http://www.wolframalpha.com/) for quick answers to your precise questions.
 
 ## Usage/Installation
@@ -15,7 +18,7 @@ Then either globally install the bot:
 ```bash
 npm install -g wolfram-irc
 curl https://raw.github.com/clux/wolfram-irc/master/.wa.json > .wa.json
-gedit .wa.json # you must change the first 4 params in config
+# edit gedit .wa.json
 wlfbot
 ```
 
@@ -25,19 +28,25 @@ Or, if you want to fork and work directly:
 git clone https://github.com/clux/wolfram-irc.git
 cd wolfram-irc
 npm install
-gedit .wa.json
+# edit .wa.json
 npm start
 ```
 
 ## Config options
-The first 3 options are used directly to connect to IRC. Nickname, server, and channel to connect to.
+The first 2 options IRC nickname, server, then a bunch of option objects:
 
-`apiKey` you will get when you create a [development account](http://products.wolframalpha.com/developers/) (which is free for low intensity use).
+- `irc` options object for the [irc](https://npmjs.org/package/irc) module
+- `stream` options object for [irc-stream](https://npmjs.org/package/irc-stream) module
+- `wolfram` options object for the [wolfram-alpha](https://npmjs.org/package/wolfram-alpha`)
 
-`whitelist` a list of usernames that you will allow to use the bot. Given that there are usage limits/potential costs, you may not want people you don't know spamming it with a script.
+You can put the `apiKey` in you config, but it will be overridden if the `WOLFRAM_APPID` environment variable is set. You can get a key when creating a [development account](http://products.wolframalpha.com/developers/) (free for low intensity use).
 
-`apiOpts` is a dictionary that will be merged into the query parameters. You can for example override your locatation and default unit selection with
+`whitelist` a list of usernames that you will allow to use the bot. Given that there are usage limits/potential costs, you may not want people you don't know spamming it with a script. Remove this list to allow everyone.
+
+`wolfram` is a dictionary that will be merged into the query parameters. You can for example override your locatation and default unit selection with
 `{"location": "London, UK", "units": "nonmetric"}`.
+
+`verbose` can be set to get the bot to dump the raw response object json to the console.
 
 ## Highlights
 

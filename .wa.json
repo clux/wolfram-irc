@@ -1,9 +1,16 @@
 {
-  "name": "wolfBot123",
+  "name": "wolfram",
   "server": "irc.quakenet.org",
-  "chan": "#wolfram",
+  "irc": {
+    "userName": "alpha",
+    "realName": "wolfram",
+    "channels": [ "#testwolfram" ]
+  },
+  "stream": {},
+  "wolfram": {
+    "location": "London, UK"
+  },
   "apiKey": "XXXXXX-XXXXXXXXXX",
-  "apiOpts": {},
   "whitelist": [
     "clux"
   ]

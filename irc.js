@@ -5,13 +5,8 @@ if (!cfgPath) {
 }
 var cfg = require(cfgPath);
 
-var scriptdir = require('path').join(__dirname, 'bot');
-var gu = require('gu')(scriptdir, ['wlf.js']);
-var ircStream = require('irc-stream')(cfg.server, cfg.name, {
-  userName: 'alpha',
-  realName: 'wolfram',
-  debug: false,
-  channels: [cfg.chan],
-});
+var ircStream = require('irc-stream')(cfg.server, cfg.name, cfg.irc, cfg.stream);
+var gu = require('./').gu();
+require('sulfur').absorb(gu.log, 'wolfbot');
 
 ircStream.pipe(gu).pipe(ircStream);

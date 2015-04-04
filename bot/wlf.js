@@ -2,29 +2,30 @@ var Wolf = require('wolfram-alpha')
   , cfgPath = require('confortable')('.wa.json', process.cwd())
   , cfg = require(cfgPath);
 
-var wolfram = Wolf.createClient(cfg.apiKey, cfg.apiOpts || {});
+var wolfram = Wolf.createClient(
+  process.env.WOLFRAM_APPID || cfg.apiKey,
+  cfg.wolfram || {}
+);
 
 module.exports = function (gu) {
 
   gu.handle(/(.*)/, function (say, content, user) {
-    if (cfg.whitelist.indexOf(user) < 0) {
+    if (Array.isArray(cfg.whitelist) && cfg.whitelist.indexOf(user) < 0) {
       return; // non-whitelisted person
     }
 
+    gu.log.info("query '%s'", content);
     // pass data onto wolfram alpha
     wolfram.query(content, function (err, rs) {
       if (err) {
-        return console.error(err);
+        return gu.log.error(err);
       }
-      console.log("Result: %j", rs);
-
-      if (rs !== null && rs.length === 1 && rs[0].primary && rs[0].subpods[0].image) {
-        // exact maths questions just give an image result without interpretation
-        say(rs[0].subpods[0].image);
-        return;
+      if (cfg.verbose) {
+        gu.log.info("query result: %j", rs); // huge log
       }
 
       if (rs === null || rs.length <= 1) {
+        gu.log.info('No results');
         say('No results');
         return;
       }
@@ -46,13 +47,11 @@ module.exports = function (gu) {
       }
 
       // keep answer on one line if it's a simple answer (interpretation + ans)
-      if (res.split('\n').length === 2) {
-        say(res.split('\n').join(' => '));
-      }
-      else {
-        say(res);
-      }
-
+      var response = (res.split('\n').length === 2) ?
+        res.split('\n').join(' => ') :
+        res;
+      gu.log.info(response);
+      say(response);
       // ignore remaining pods
     });
   });
