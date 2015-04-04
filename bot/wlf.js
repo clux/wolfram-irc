@@ -1,10 +1,7 @@
-var Wolf = require('wolfram-alpha')
-  , cfgPath = require('confortable')('.wa.json', process.cwd())
-  , cfg = require(cfgPath);
-
-var wolfram = Wolf.createClient(
+var cfg = require(require('confortable')('.wa.json', process.cwd()));
+var wolfram = require('wolfram-alpha').createClient(
   process.env.WOLFRAM_APPID || cfg.apiKey,
-  cfg.wolfram || {}
+  cfg.wolfram
 );
 
 module.exports = function (gu) {
@@ -26,30 +23,26 @@ module.exports = function (gu) {
 
       if (rs === null || rs.length <= 1) {
         gu.log.info('No results');
-        say('No results');
-        return;
+        return say('No results');
       }
 
       // first result is interpretation
-      var res = rs[0].subpods[0].text.trim();
+      var res = [ rs[0].subpods[0].text.trim() ];
 
       // second one is usually the most important one
       for (var i = 0; i < rs[1].subpods.length; i += 1) {
         var pod = rs[1].subpods[i];
-        if (!pod.text) { // sometimes there is no text, then do the image
-          // TODO: also shorten the link
-          res += '\n' + pod.image;
-          break; // wolfram preferred the image => ignore the next pod
+        // when no text - then usually there's an image - do one and stop
+        if (!pod.text) {
+          res.push(pod.image); // NB: link is temporary
+          break;
         }
-        else {
-          res += '\n' + pod.text;
-        }
+        // grab all the consecutive blobs of text
+        res.push(pod.text);
       }
 
       // keep answer on one line if it's a simple answer (interpretation + ans)
-      var response = (res.split('\n').length === 2) ?
-        res.split('\n').join(' => ') :
-        res;
+      var response = (res.length === 2) ? res.join(' => ') : res.join('\n');
       gu.log.info(response);
       say(response);
       // ignore remaining pods

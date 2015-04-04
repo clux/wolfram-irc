@@ -8,7 +8,6 @@ exports.multiline = function (t) {
   sulfur.absorb(wlf.log, 'gu');
 
   wlf.write({user: '#chan:clux', name: 'clux', message: '77kg in pounds'});
-
   wlf.on('readable', function () {
     var msg = wlf.read();
     t.ok(msg, 'got response');
@@ -27,7 +26,6 @@ exports.image = function (t) {
   sulfur.absorb(wlf.log, 'gu');
 
   wlf.write({user: '#chan:clux', name: 'clux', message: 'plot x^3 - 6x^2 + 4x'});
-
   wlf.on('readable', function () {
     var msg = wlf.read();
     t.ok(msg, 'got response');
@@ -42,18 +40,13 @@ exports.maths = function (t) {
   var wlf = new Gu(guParams.scriptdir, guParams.files, { noReload: true });
   sulfur.absorb(wlf.log, 'gu');
 
-  wlf.write({user: '#chan:clux', name: 'clux',
-    message: 'phi(28)'
-  });
-
+  wlf.write({user: '#chan:clux', name: 'clux', message: 'phi(28)'});
   wlf.on('readable', function () {
     var msg = wlf.read();
     t.ok(msg, 'got response');
     t.equal(msg.message, 'phi(28) => 12', 'single line answer');
     t.done();
   });
-
-
 };
 
 exports.nonwhite = function (t) {
@@ -68,11 +61,10 @@ exports.nonwhite = function (t) {
 };
 
 exports.noresults = function (t) {
-    var wlf = new Gu(guParams.scriptdir, guParams.files, { noReload: true });
+  var wlf = new Gu(guParams.scriptdir, guParams.files, { noReload: true });
   sulfur.absorb(wlf.log, 'gu');
 
   wlf.write({user: '#chan:clux', name: 'clux', message: 'qqqqqqqqqqqqqqqqqqqqqqqq'});
-
   wlf.on('readable', function () {
     var msg = wlf.read();
     t.ok(msg, 'got response');
