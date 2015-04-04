@@ -7,15 +7,15 @@
 A simple IRC bot that connects to a server/channel of choice and will relay any messages addressed to it in the channel to [Wolfram Alpha](http://http://www.wolframalpha.com/) for quick answers to your precise questions.
 
 ## Usage/Installation
-First install the libxmljs dependency in the parser:
+You may need to install libxml outside npm first:
 
-```bash
+```sh
 sudo apt-get install libxml2-dev # for libxmljs
 ```
 
 Then either globally install the bot:
 
-```bash
+```sh
 npm install -g wolfram-irc
 curl https://raw.github.com/clux/wolfram-irc/master/.wa.json > .wa.json
 # edit gedit .wa.json
@@ -24,7 +24,7 @@ wlfbot
 
 Or, if you want to fork and work directly:
 
-```bash
+```sh
 git clone https://github.com/clux/wolfram-irc.git
 cd wolfram-irc
 npm install
