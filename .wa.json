@@ -6,7 +6,9 @@
     "realName": "wolfram",
     "channels": [ "#testwolfram" ]
   },
-  "stream": {},
+  "stream": {
+    "answerPms": true
+  },
   "wolfram": {
     "location": "London, UK"
   },
