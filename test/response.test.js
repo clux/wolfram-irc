@@ -4,7 +4,7 @@ var Gu = require('gu')
   ;
 
 exports.multiline = function (t) {
-  var wlf = new Gu(guParams.scriptdir, guParams.files, { noReload: true });
+  var wlf = new Gu(guParams.scriptdir, guParams.files, { verbose: true });
   sulfur.absorb(wlf.log, 'gu');
 
   wlf.write({user: 'clux', message: '77kg in pounds'});
@@ -22,7 +22,7 @@ exports.multiline = function (t) {
 };
 
 exports.image = function (t) {
-  var wlf = new Gu(guParams.scriptdir, guParams.files, { noReload: true });
+  var wlf = new Gu(guParams.scriptdir, guParams.files, { verbose: true });
   sulfur.absorb(wlf.log, 'gu');
 
   wlf.write({user: 'clux', message: 'plot x^3 - 6x^2 + 4x'});
@@ -37,7 +37,7 @@ exports.image = function (t) {
 };
 
 exports.maths = function (t) {
-  var wlf = new Gu(guParams.scriptdir, guParams.files, { noReload: true });
+  var wlf = new Gu(guParams.scriptdir, guParams.files, { verbose: true });
   sulfur.absorb(wlf.log, 'gu');
 
   wlf.write({user: 'clux', message: 'phi(28)'});
@@ -50,7 +50,7 @@ exports.maths = function (t) {
 };
 
 exports.nonwhite = function (t) {
-  var wlf = new Gu(guParams.scriptdir, guParams.files, { noReload: true });
+  var wlf = new Gu(guParams.scriptdir, guParams.files, { verbose: true });
   sulfur.absorb(wlf.log, 'gu');
 
   wlf.write({user: 'bot', message: 'plot x^3 - 6x^2 + 4x'});
@@ -61,7 +61,7 @@ exports.nonwhite = function (t) {
 };
 
 exports.noresults = function (t) {
-  var wlf = new Gu(guParams.scriptdir, guParams.files, { noReload: true });
+  var wlf = new Gu(guParams.scriptdir, guParams.files, { verbose: true });
   sulfur.absorb(wlf.log, 'gu');
 
   wlf.write({user: 'clux', message: 'qqqqqqqqqqqqqqqqqqqqqqqq'});
