@@ -1,3 +1,7 @@
+0.5.0 / 2015-05-06
+==================
+  * Bump gu@0.6.0 to remove pointless watcher logic
+
 0.4.0 / 2015-04-04
 ==================
   * `apiKey` is now overriden by the environment variable `WOLFRAM_APPID`
