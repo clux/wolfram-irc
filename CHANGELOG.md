@@ -1,3 +1,7 @@
+0.5.1 / 2015-05-13
+==================
+  * Bump wolfram-alpha to fix iojs builds
+
 0.5.0 / 2015-05-06
 ==================
   * Bump gu@0.6.0 to remove pointless watcher logic
