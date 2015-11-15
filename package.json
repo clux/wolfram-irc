@@ -15,20 +15,18 @@
     "start": "node irc.js",
     "test": "nodeunit --reporter=verbose test/*.test.js",
     "precoverage": "jscoverage bot",
-    "coverage": "WOLFBOT_COV=1 nodeunit --reporter=lcov test/*.test.js",
-    "coveralls": "npm run coverage | coveralls"
+    "coverage": "WOLFBOT_COV=1 nodeunit --reporter=lcov test/*.test.js"
   },
   "dependencies": {
-    "confortable": "^0.2.2",
+    "confortable": "^1.0.0",
     "gu": "^0.6.1",
-    "irc-stream": "^0.3.0",
+    "irc-stream": "^0.3.2",
     "sulfur": "^1.0.0",
-    "wolfram-alpha": "^0.2.1"
+    "wolfram-alpha": "^0.3.0"
   },
   "devDependencies": {
     "jscoverage": "^0.5.9",
-    "nodeunit": "^0.9.1",
-    "coveralls": "^2.11.2"
+    "nodeunit": "^0.9.1"
   },
   "license": "MIT"
 }

@@ -1,3 +1,8 @@
+0.5.2 / 2015-11-16
+==================
+  * Bump wolfram-alpha
+  * Added `.npmignore`
+
 0.5.1 / 2015-05-13
 ==================
   * Bump wolfram-alpha to fix iojs builds
