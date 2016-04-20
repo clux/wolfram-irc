@@ -1,3 +1,7 @@
+0.6.0 / 2016-04-20
+==================
+  * bump wolfram-alpha for newer libxmljs
+
 0.5.2 / 2015-11-16
 ==================
   * Bump wolfram-alpha
