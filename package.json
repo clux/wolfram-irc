@@ -2,7 +2,7 @@
   "author": "Eirik Albrigtsen <analsandblaster@gmail.com>",
   "name": "wolfram-irc",
   "description": "IRC bot that defers to Wolfram Alpha",
-  "version": "0.5.2",
+  "version": "0.6.0",
   "repository": {
     "type": "git",
     "url": "clux/wolfram-irc"
