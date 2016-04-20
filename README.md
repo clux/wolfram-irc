@@ -39,7 +39,9 @@ The first 2 options IRC nickname, server, then a bunch of option objects:
 - `stream` options object for [irc-stream](https://npmjs.org/package/irc-stream) module
 - `wolfram` options object for the [wolfram-alpha](https://npmjs.org/package/wolfram-alpha`)
 
-You can put the `apiKey` in you config, but it will be overridden if the `WOLFRAM_APPID` environment variable is set. You can get a key when creating a [development account](http://products.wolframalpha.com/developers/) (free for low intensity use).
+You can put the `apiKey` in your config, but it will be overridden if the `WOLFRAM_APPID` environment variable is set. 
+
+The Wolfram|Alpha® API is available for free for non-commercial experimental use with a low monthly cap on queries.  For more information, visit [http://products.wolframalpha.com/developers/](http://products.wolframalpha.com/developers/). Wolfram is a registered trademark of the Wolfram Group of Companies.
 
 `whitelist` a list of usernames that you will allow to use the bot. Given that there are usage limits/potential costs, you may not want people you don't know spamming it with a script. Remove this list to allow everyone.
 
